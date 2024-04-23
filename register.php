@@ -1,9 +1,9 @@
 <?php
 // Database connection parameters
 $host = "localhost";
-$username = ""; // Change this to your MySQL username
+$username = "root"; // Change this to your MySQL username
 $password = ""; // Change this to your MySQL password
-$database = ""; // Change this to your MySQL database name
+$database = "hotelsystem"; // Change this to your MySQL database name
 
 // Create connection
 $conn = new mysqli($host, $username, $password, $database);
