@@ -18,7 +18,7 @@ if (!isset($_SESSION["firstName"])) {
 <body>
     <div class="container">
         <header class="header">
-            <h1>Hello,  <?php echo $_SESSION["firstName"]?>! </h1>
+            <h1>Welcome,  <?php echo $_SESSION["firstName"]?>! </h1>
         </header>
         <main class="main-content">
             <p>Glad to see you in our community! You've successfully signed in.</p>

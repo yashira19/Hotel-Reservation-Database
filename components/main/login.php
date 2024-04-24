@@ -40,5 +40,5 @@ $_SESSION["username"] = $userDetails["username"];
 $_SESSION["firstName"] = $userDetails["firstName"];
 
 // Redirect to the home page
-header("Location: ../home.php");
+header("Location: ../roomBooking.php");
 exit();

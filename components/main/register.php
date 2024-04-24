@@ -89,5 +89,5 @@ $stmt2->bind_param("sssss", $username, $password, $firstName, $lastName, $email)
 $stmt2->execute();
 
 // Redirect to index page after successful registration
-header("Location: ../index.php?error=none");
+header("Location: ../roomBooking.php?error=none");
 exit();
