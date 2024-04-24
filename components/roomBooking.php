@@ -59,10 +59,10 @@ if ($stmt2->execute()) {
 }
 
 // Close database connection
-$stmt->close();
-$stmt2->close();
-$conn->close();
+// $stmt->close();
+// $stmt2->close();
+// $conn->close();
 
 // Redirect to index page after successful registration
-header("Location: ../components/index.php?error=none");
-exit();
+// header("Location: ../components/index.php?error=none");
+// exit();

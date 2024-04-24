@@ -21,7 +21,7 @@ if (!isset($_SESSION["firstName"])) {
             <h1>Welcome,  <?php echo $_SESSION["firstName"]?>! </h1>
         </header>
         <main class="main-content">
-            <p>Glad to see you in our community! You've successfully signed in.</p>
+            <p>Ready for your booking! You've successfully signed in.</p>
             <form action="main/logout.php" method="post">
                 <button type="submit" class="btn-logout">Sign Out</button>
             </form>
