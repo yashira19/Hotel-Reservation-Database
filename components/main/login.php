@@ -1,5 +1,4 @@
 <?php
-
 require("dbconnect.php"); // Including the database connection file
 
 // Retrieve username and password from POST request
@@ -13,8 +12,7 @@ if (empty($userInputName) || empty($userInputPassword)) {
 }
 
 // Prepare a query to select user data
-// Using prepared statements to prevent SQL injection
-$query = $conn->prepare("SELECT username, password, firstName FROM user WHERE username = ?");
+$query = $conn->prepare("SELECT username, password, firstName, role FROM user WHERE username = ?");
 $query->bind_param("s", $userInputName); // Binding parameters to prevent SQL injection
 $query->execute();
 $userData = $query->get_result();
@@ -39,7 +37,19 @@ session_start();
 $_SESSION["username"] = $userDetails["username"];
 $_SESSION["firstName"] = $userDetails["firstName"];
 
-// Redirect to the home page
-header("Location: ../home_page.php");
-exit();
+// Determine the user's role
+$role = $userDetails["role"];
+
+// Redirect based on the user's role
+if ($role === "Staff") {
+    // Redirect staff to staff page
+    header("Location: ../staffpage.php");
+    exit();
+} else {
+    // Redirect regular users to the home page
+    header("Location: ../home_page.php");
+    exit();
+}
+?>
+
 
