@@ -7,8 +7,8 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "bingo";
-$dbname = "hotel";
+$password = "Dnangel123!@#";
+$dbname = "hotelsystem";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

@@ -28,7 +28,7 @@
                 echo "<p class='error-message'>" . $errorMsgs[$_GET["error"]] . "</p>";
             }
             ?>
-            <form action="components/main/register.php" method="post" class="signup-form">
+            <form action="register.php" method="post" class="signup-form">
                 <input type="text" name="username" placeholder="Username">
                 <input type="password" name="password" placeholder="Password">
                 <input type="password" name="cpassword" placeholder="Confirm Password">

@@ -16,10 +16,10 @@ if (!isset($_SESSION["firstName"])) {
   <h1>Welcome to the Hotel Reservation System</h1>
   <p>Please select an option:</p>
   <ul>
-    <li><a href="book.php">Book a Room</a></li>
+    <li><a href="available_rooms.php">Book a Room</a></li>
     <li><a href="view_reservations.php">View Reservations</a></li>
     <li><a href="cancel_reservation.php">Cancel Reservation</a></li>
-    <li><a href="../components/index.php">Log out</a></li>
+    <li><a href="index.php">Log out</a></li>
 
   </ul>
 </body>

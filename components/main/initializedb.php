@@ -10,7 +10,7 @@ if ($conn->connect_error) {
 }
 
 // Drop the 'user' table if it exists
-$sql = "DROP TABLE IF EXISTS user;";
+$sql = "DROP TABLE IF EXISTS users;";
 if (!$conn->query($sql)) {
     die("Error dropping user table: " . $conn->error);
 }

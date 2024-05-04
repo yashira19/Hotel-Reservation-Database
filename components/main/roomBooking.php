@@ -2,11 +2,11 @@
 // Start the session
 session_start();
 
-// Redirect to room booking page if the form wasn't submitted
-if (!isset($_POST["submit"])) {
-    header("Location: ../room_booking.php");
-    exit();
-}
+//// Redirect to room booking page if the form wasn't submitted
+//if (!isset($_POST["submit"])) {
+//    header("Location: ../roomBooking.php");
+//    exit();
+//}
 
 // Include database connection
 require("dbconnect.php");
@@ -19,7 +19,7 @@ $end_time = $_POST["end_time"];
 
 // Check for empty fields
 if (empty($room_type) || empty($booking_date) || empty($start_time) || empty($end_time)) {
-    header("Location: ../room_booking.php?error=emptyfields");
+    header("Location: ../roomBooking.php?error=emptyfields");
     exit();
 }
 
@@ -59,10 +59,8 @@ if ($stmt2->execute()) {
 }
 
 // Close database connection
-// $stmt->close();
-// $stmt2->close();
-// $conn->close();
+$stmt->close();
+$stmt2->close();
+$conn->close();
+?>
 
-// Redirect to index page after successful registration
-// header("Location: ../components/index.php?error=none");
-// exit();

@@ -34,13 +34,13 @@ session_start();
                     }
                 ?>
             </div>
-            <form action="main/login.php" method="post" class="login-form">
+            <form action="login.php" method="post" class="login-form">
                 <input type="text" name="username" placeholder="Username">
                 <input type="password" name="password" placeholder="Password">
                 <button type="submit" class="login-button">Log In</button>
             </form>
             <p class="signup-prompt">New here? <a href="signup.php" class="signup-link">Sign up now!</a></p>
-            <form action="main/initializedb.php" method="post">
+            <form action="initializedb.php" method="post">
                 <button type="submit" class="init-db-button">Initialize Database</button>
             </form>
         </div>
