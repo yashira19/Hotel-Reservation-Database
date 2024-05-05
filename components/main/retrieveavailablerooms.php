@@ -11,8 +11,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit_booking"])) {
     }
 }
 
-// Query to select available rooms
-$sql = "SELECT * FROM rooms WHERE availability_status = 'available'";
+// Query to select available rooms with hotel information
+$sql = "SELECT rooms.room_id, rooms.room_type, rooms.price_per_night, hotels.name AS hotel_name 
+        FROM rooms 
+        INNER JOIN hotels ON rooms.hotel_id = hotels.hotel_id 
+        WHERE rooms.availability_status = 'available'";
 $result = $conn->query($sql);
 
 // Check if there are any available rooms
@@ -21,6 +24,7 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         echo "<div>";
         echo "<p>Room ID: " . $row["room_id"]. "</p>";
+        echo "<p>Hotel Name: " . $row["hotel_name"]. "</p>";
         echo "<p>Type: " . $row["room_type"]. "</p>";
         echo "<p>Price: $" . $row["price_per_night"]. "</p>";
         // Add hidden input field for room ID
@@ -38,5 +42,6 @@ if ($result->num_rows > 0) {
 // Close the database connection
 $conn->close();
 ?>
+
 
 

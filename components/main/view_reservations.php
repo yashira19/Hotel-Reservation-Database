@@ -14,8 +14,12 @@ if (!isset($_SESSION["username"])) {
 // Retrieve the username from the session
 $username = $_SESSION["username"];
 
-// Query to select bookings for the logged-in user
-$stmt = $conn->prepare("SELECT b.*, r.price_per_night FROM bookings b JOIN rooms r ON b.room_id = r.room_id WHERE b.username = ?");
+// Query to select bookings for the logged-in user, including hotel name
+$stmt = $conn->prepare("SELECT b.*, r.price_per_night, h.name AS hotel_name 
+                        FROM bookings b 
+                        JOIN rooms r ON b.room_id = r.room_id 
+                        JOIN hotels h ON r.hotel_id = h.hotel_id 
+                        WHERE b.username = ?");
 $stmt->bind_param("s", $username);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -26,6 +30,7 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo "<p>Booking ID: " . $row["booking_id"] . "</p>";
         echo "<p>Room ID: " . $row["room_id"] . "</p>";
+        echo "<p>Hotel: " . $row["hotel_name"] . "</p>";
         echo "<p>Price Per Night: $" . $row["price_per_night"] . "</p>";
         echo "<p>Start Date: " . $row["start_date"] . "</p>";
         echo "<p>End Date: " . $row["end_date"] . "</p>";
@@ -58,4 +63,5 @@ $conn->close();
     <a href="home_page.php">Back to Home</a>
 </body>
 </html>
+
 

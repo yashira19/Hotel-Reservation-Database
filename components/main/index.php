@@ -40,9 +40,6 @@ session_start();
                 <button type="submit" class="login-button">Log In</button>
             </form>
             <p class="signup-prompt">New here? <a href="signup.php" class="signup-link">Sign up now!</a></p>
-            <form action="initializedb.php" method="post">
-                <button type="submit" class="init-db-button">Initialize Database</button>
-            </form>
         </div>
     </div>
 </body>

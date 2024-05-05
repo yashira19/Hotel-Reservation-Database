@@ -57,14 +57,19 @@ session_start(); // Start the session to access session variables
     <h2>Add New Room</h2>
     <form action="add_room.php" method="post">
         <label for="room_type">Room Type:</label>
-        <input type="text" id="room_type" name="room_type" required><br>
+        <select id="room_type" name="room_type" required>
+            <option value="Standard">Standard</option>
+            <option value="Queen">Queen</option>
+            <option value="Suite">Suite</option>
+        </select><br>
         <label for="price_per_night">Price Per Night:</label>
         <input type="number" id="price_per_night" name="price_per_night" required><br>
         <label for="hotel_name">Hotel Name:</label>
-        <input type="text" id="hote_name" name="hotel_name" required><br>
+        <input type="text" id="hotel_name" name="hotel_name" required><br>
         <!-- Add more fields for other room details -->
         <button type="submit" name="add_room">Add Room</button>
     </form>
 </body>
 </html>
+
 
